@@ -31,8 +31,5 @@ sleep 2
 # Verify DISPLAY is set
 echo "DISPLAY is set to $DISPLAY"
 
-# Trap to ensure Xvfb and x11vnc shut down gracefully
-trap "echo 'Stopping Xvfb and x11vnc'; kill $XVFB_PID; pkill -f x11vnc" EXIT
-
 # Keep the script running to maintain the X session
-wait $XVFB_PID
+sleep infinity
